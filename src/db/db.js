@@ -2,6 +2,7 @@ import mongoose from 'mongoose'
 import {DB_NAME} from '../constants.js'
 import dotenv from 'dotenv'
 dotenv.config()
+mongoose.set('runValidators',true)
 const connectDB = async ()=>{
     try {
         const conn = await mongoose.connect(`${process.env.MONGODB_URI}/${DB_NAME}`)
